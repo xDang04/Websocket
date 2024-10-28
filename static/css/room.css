@@ -1,0 +1,76 @@
+.container {
+    width:50%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+    border-radius: 10px;
+}
+
+.mymessage, .messagesender {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.mymessage {
+    background-color: aqua;
+    align-self: end;
+}
+
+.messagesender {
+    background-color: forestgreen;
+    align-self: flex-start;
+}
+.message-timestamp-right{
+    text-align: right;
+}
+.message-timestamp-left{
+    text-align: left;
+    color: aliceblue;
+
+}
+.forminput {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    padding: 5px; 
+    position: fixed; 
+    bottom: 0px; 
+    transform: translateX(50%);
+}
+
+.inputmessage {
+    flex: 1; 
+    padding: 10px;
+    border: none; 
+    border-radius: 20px; 
+    resize: none; 
+    background-color: #ffffff; 
+}
+
+.inputmessage::placeholder {
+    color: #999;
+    padding: 10px;
+}
+
+.buttonsend {
+    /* padding: 0 15px; Đệm ngang cho nút */
+    height:60px; /* Chiều cao nút */
+    border: none;
+    border-radius: 20px; 
+    background-color: #007bff; 
+    color: white;
+    cursor: pointer;
+    margin-left: 5px; 
+    transition: background-color 0.3s;
+}
+
+.buttonsend:hover {
+    background-color: #0056b3; 
+}

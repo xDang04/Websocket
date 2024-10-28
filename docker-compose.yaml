@@ -1,0 +1,65 @@
+version: '3.7'
+services:
+  sql_db: 
+    image: mysql:5.7
+    container_name: "mysql_connect"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'chat'
+      MYSQL_USER: 'chatrealtime'
+      MYSQL_PASSWORD: 'root'
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    ports:
+      - "9001:3306"
+    expose:
+      - "3306"
+    # restart: always
+    volumes:
+      - ./db_data:/var/lib/mysql
+
+  #   networks:
+  #     - my-networks
+  # chatrealtime:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   container_name: "chatrealtime_connect"
+  #   command: >
+  #     bash -c "(python manage.py migrate) && (python manage.py runserver 0.0.0.0:9000)"
+  #   tty: true
+  #   stdin_open: true
+  #   ports:
+  #     - "9000:9000"
+  #   volumes:
+  #     - /home/dang-den/Desktop/websocket/:/code/
+  #   # restart: always
+  #   depends_on:
+  #     - sql_db
+  #   networks:
+  #     - my-networks
+    # NGINX Service
+  # nginx:
+  #   build: ./nginx
+  #   image: nginx:latest
+  #   container_name: "nginx_connect"
+  #   # restart: always
+  #   volumes:
+  #     - /home/dang-den/Desktop/myproject/:/code/
+  #     # - ./nginx:/etc/nginx/conf.d 
+  #     # - ./my_django_project/shoplink/static:/static 
+  #     # - ./my_django_project/shoplink/templates:/usr/share/nginx/html/templates
+  #   ports:
+  #     - "80:80" #this port 80 will be used in our nginx.conf file (se below)
+  #   depends_on:
+  #     - chatrealtime
+  #   networks:
+  #     - my-networks
+
+# volumes:
+#   db_data:
+
+# networks:
+#   my-networks:
+#     driver: bridge
+#     ipam:
+#       driver: default 
